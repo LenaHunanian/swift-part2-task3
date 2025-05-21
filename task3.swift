@@ -1,6 +1,6 @@
 class Person {
-    var name: String
-    var age: Int
+    let name: String
+    let age: Int
     var isAdult: Bool {return  age >= 18 }
     static let minAgeForEnrollment = 16
     lazy var profileDescription: String = {
@@ -21,8 +21,8 @@ class Person {
 }
 
 class Student: Person {
-    var studentID: String
-    var major: String
+    let studentID: String
+    let major: String
 
     nonisolated(unsafe) static var studentCount: Int = 0
     weak var advisor: Professor?
@@ -42,7 +42,7 @@ class Student: Person {
     }
 }
 class Professor: Person {
-    var faculty: String
+    let faculty: String
     nonisolated(unsafe) static var professorCount: Int = 0
     
     init(name: String, age: Int, faculty: String) {
@@ -53,8 +53,8 @@ class Professor: Person {
     }
 }
 struct University {
-    var name: String
-    var location: String
+    let name: String
+    let location: String
     var description: String {
         return "University \(name) is located in \(location)"
     }
